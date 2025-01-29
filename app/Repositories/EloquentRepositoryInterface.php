@@ -23,8 +23,6 @@ interface EloquentRepositoryInterface
 
     public function all(): ?Collection;
 
-    public function listByFilters($request);
-
     public function findWithTrashed($id): ?Model;
 
     public function allWithTrashed(): ?Collection;

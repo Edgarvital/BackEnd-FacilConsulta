@@ -2,11 +2,9 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Api\ListFilters;
 use App\Repositories\EloquentRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 
 class BaseRepository implements EloquentRepositoryInterface
 {
@@ -67,30 +65,6 @@ class BaseRepository implements EloquentRepositoryInterface
         $model = $this->findWithTrashed($id);
         $model->restore();
         return $model;
-    }
-
-    public function listByFilters($request)
-    {
-        $params = ListFilters::verifyFilterInputs($request);
-
-        $searchValue = $params['searchValue'];
-        $searchColumns = $params['searchColumns'];
-        $orderColumn = $params['orderColumn'];
-        $sortDirection = $params['sortDirection'];
-
-        $query = $this->model->newQuery();
-
-        if ($searchValue !== null) {
-            $query->where(function ($query) use ($searchColumns, $searchValue) {
-                foreach ($searchColumns as $column) {
-                    $query->orWhere(DB::raw('lower(' . $column . ')'), 'like', "%" . strtolower($searchValue) . "%");
-                }
-            });
-        }
-
-        $query->orderBy($orderColumn, $sortDirection);
-
-        return $query;
     }
 
 }

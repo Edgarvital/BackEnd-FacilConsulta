@@ -2,10 +2,8 @@
 
 namespace App\Services\User;
 
-use App\Api\ListFilters;
 use App\Repositories\UserRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class UserService implements UserServiceInterface
 {
