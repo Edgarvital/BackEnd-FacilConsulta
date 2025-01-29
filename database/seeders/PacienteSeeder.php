@@ -9,7 +9,7 @@ class PacienteSeeder extends Seeder
 {
 
     public function run(){
-        $qnt_pacientes = 10;
+        $qnt_pacientes = 200;
 
         Paciente::factory($qnt_pacientes)->create();
     }

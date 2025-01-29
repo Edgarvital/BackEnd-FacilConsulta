@@ -23,7 +23,6 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     public function getAuthUserInfos($user_id): ?Model
     {
         $authUser = $this->model->where('id', $user_id)
-            ->with('role')
             ->firstOrFail();
 
         return $authUser;

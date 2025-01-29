@@ -16,13 +16,13 @@ class RepositoryServiceProvider extends ServiceProvider implements DeferrablePro
      */
     public function register()
     {
-        //$this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
     }
 
     public function provides()
     {
         return [
-            //UserRepositoryInterface::class,
+            UserRepositoryInterface::class,
         ];
     }
 

@@ -14,13 +14,13 @@ class ServiceServiceProvider extends ServiceProvider implements DeferrableProvid
      */
     public function register(): void
     {
-        //$this->app->bind(UserServiceInterface::class, UserService::class);
+        $this->app->bind(UserServiceInterface::class, UserService::class);
     }
 
     public function provides()
     {
         return [
-            //UserServiceInterface::class,
+            UserServiceInterface::class,
         ];
     }
 
