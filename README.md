@@ -24,6 +24,9 @@ A aplicação segue a arquitetura de camadas, organizada da seguinte forma:
 - **Laravel Sail:** Usado para configurar os containers Docker para a aplicação e banco de dados.
 - **MySQL:** Banco de dados utilizado com Laravel Sail.
 
-## Projects
+## Detalhes
 
 - O projeto contém um Project que foi utilizado para definir e gerênciar os passos necessários para alcançar o resultado final no desenvolvimento. https://github.com/users/Edgarvital/projects/4/views/1
+- A API também conta com um sistema de seeders, então, é necessário rodar ele para popular o banco.
+
+Qualquer dúvida, entrar em contato.
