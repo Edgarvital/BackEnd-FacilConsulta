@@ -12,11 +12,7 @@ class MedicoFactory extends Factory
     public function definition()
     {
         $especialidades = [
-            'Cardiologia',
-            'Pediatria',
-            'Ortopedia',
-            'Neurologia',
-            'Dermatologia',
+            'Cardiologista', 'Pediatra', 'Ortopedista', 'Neurologista', 'Dermatologista'
         ];
 
         return [

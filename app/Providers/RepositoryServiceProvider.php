@@ -3,7 +3,11 @@
 namespace App\Providers;
 
 use App\Repositories\CidadeRepositoryInterface;
+use App\Repositories\ConsultaRepositoryInterface;
 use App\Repositories\Eloquent\CidadeRepository;
+use App\Repositories\Eloquent\ConsultaRepository;
+use App\Repositories\Eloquent\MedicoRepository;
+use App\Repositories\MedicoRepositoryInterface;
 use App\Repositories\UserRepositoryInterface;
 use App\Repositories\Eloquent\UserRepository;
 use Illuminate\Contracts\Support\DeferrableProvider;
@@ -20,6 +24,8 @@ class RepositoryServiceProvider extends ServiceProvider implements DeferrablePro
     {
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(CidadeRepositoryInterface::class, CidadeRepository::class);
+        $this->app->bind(MedicoRepositoryInterface::class, MedicoRepository::class);
+        $this->app->bind(ConsultaRepositoryInterface::class, ConsultaRepository::class);
     }
 
     public function provides()
@@ -27,6 +33,8 @@ class RepositoryServiceProvider extends ServiceProvider implements DeferrablePro
         return [
             UserRepositoryInterface::class,
             CidadeRepositoryInterface::class,
+            MedicoRepositoryInterface::class,
+            ConsultaRepositoryInterface::class,
         ];
     }
 
